@@ -28,11 +28,11 @@ pathAplicacion3=strcat(pathAplicacion,'IRM/'); %imagenes fondo removido siluetas
 
 
 %% CONFIGURACIONES DEFECTOS MASCARA Y COLOR
-pathAplicacionCALROI=strcat(pathAplicacion,'ROICalyxC/'); % 1 imagen con 4 marcas en magenta
-pathAplicacionCALROIBin=strcat(pathAplicacion,'ROICalyxBin/'); % 1 imagen con 4 marcas en binario
+pathAplicacionCALROI=strcat(pathAplicacion,'ROISpotC/'); % 1 imagen con 4 marcas en magenta
+pathAplicacionCALROIBin=strcat(pathAplicacion,'ROISpotBin/'); % 1 imagen con 4 marcas en binario
 
-pathCalyxColor=strcat(pathAplicacion,'MCalyxColor/'); %almacenado de calyx en color
-pathCalyxBinario=strcat(pathAplicacion,'MCalyxBin/'); %almacenado de calyx en binario
+pathCalyxColor=strcat(pathAplicacion,'MSpotColor/'); %almacenado de calyx en color
+pathCalyxBinario=strcat(pathAplicacion,'MSpotBin/'); %almacenado de calyx en binario
 
 
 % --- NOMBRE DE IMAGENES INTERMEDIAS ---

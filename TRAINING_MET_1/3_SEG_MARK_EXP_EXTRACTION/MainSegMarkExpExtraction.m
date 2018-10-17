@@ -22,15 +22,16 @@ clc; clear all; close all;
  
  %% Definicion de estructura de directorios 
 HOME=strcat(pwd,'/');
-pathPrincipal=strcat(HOME,'SoyResults/byDisease/PSMet2/SegMarkExp/'); %Toma como entradas las imágenes generadas con el proceso anterior
-pathPrincipal2=strcat(HOME,'SoyResults/byDisease/PSMet2/SegMarkExpExtraction/'); %
-pathEntradaImagenesTraining=strcat(HOME,'SoyResults/inputTraining/');
+pathPrincipal=strcat(HOME,'SoyResults2/TrainingMet1/SegMarkExp/'); %Toma como entradas las imágenes generadas con el proceso anterior
+pathPrincipal2=strcat(HOME,'SoyResults2/TrainingMet1/SegMarkExpExtraction/'); %
+
+pathEntradaImagenesTraining=strcat(HOME,'SoyResults2/inputTraining/');
 pathAplicacion=strcat(pathPrincipal,'tmpToLearn/'); %directorio de alojamiento de imagenes
  
  
 %% Definicion de variables para resguardo de defectos y calyx
-pathcalyxColor=strcat(pathAplicacion,'cCalyx/'); %calyx en color
-pathcalyxBin=strcat(pathAplicacion,'MCalyxBin/'); %siluetas de calyx en binario
+pathcalyxColor=strcat(pathAplicacion,'cSpot/'); %calyx en color
+pathcalyxBin=strcat(pathAplicacion,'MSpotBin/'); %siluetas de calyx en binario
  
 nombreImagenP='nombreImagenP';
 
@@ -74,7 +75,7 @@ for n=1:size(listado)
    defectDetectionExp( 1, nombreImagencalyxBin1, nombreImagencalyxColor1, archivoBDENFERMEDADES, nombreImagenOriginal, etiqueta);
       
    %% llamado para la extraccion de enfermedades      
-   if n==1
+   if n==10
         break;
    end;
 end %

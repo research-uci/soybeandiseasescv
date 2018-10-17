@@ -20,14 +20,16 @@ clc; clear all; close all;
  
  %% Definicion de estructura de directorios 
 HOME=strcat(pwd,'/');
-pathPrincipal=strcat(HOME,'SoyResults/byDisease/PSMet2/SegMarkExp/');
-pathEntradaImagenesMarcas=strcat(HOME,'SoyResults/inputMarked/'); %entrada con imagenes marcadas por experto
-pathEntradaImagenes=strcat(HOME,'SoyResults/inputToLearn/');
-pathEntradaMarca=strcat(HOME,'SoyResults/inputTraining/'); %deben almacenarse imágenes marcadas para entrenamiento.
+pathPrincipal=strcat(HOME,'SoyResults2/TrainingMet1/SegMarkExp/');
 pathConfiguracion=strcat(pathPrincipal,'conf/'); %se guardan configuraciones
 pathAplicacion=strcat(pathPrincipal,'tmpToLearn/'); %se utiliza para situar las imagenes de calibracion
-pathAplicacionSiluetas=strcat(pathAplicacion,'sFrutas/');
 pathResultados=strcat(pathPrincipal,'output/');%se guardan los resultados
+
+
+pathDB=strcat(HOME,'SoyResults2/'); %entrada con imagenes marcadas por experto
+pathEntradaImagenesMarcas=strcat(pathDB,'MARKED/'); %entrada con imagenes marcadas por experto
+pathEntradaImagenes=strcat(pathDB,'SOURCE/');
+pathEntradaMarca=strcat(pathDB,'inputTraining/'); %deben almacenarse imágenes marcadas para entrenamiento.
 
 nombreImagenP='nombreImagenP';
 
@@ -35,23 +37,27 @@ nombreImagenP='nombreImagenP';
 %% CONFIGURACIONES DE PROCESAMIENTO DE IMAGENES
 areaObjetosRemoverBR=5000; % para siluetas y detección de objetos. Tamaño para realizar granulometria
 % configuracion de umbrales
-canalLMin = 3.432; canalLMax = 77.734; canalAMin = -4.215; canalAMax = 7.603; canalBMin = -6.477; canalBMax = 7.127; %parametros de umbralizacion de fondo
+%canalLMin = 3.432; canalLMax = 77.734; canalAMin = -4.215; canalAMax = 7.603; canalBMin = -6.477; canalBMax = 7.127; %parametros de umbralizacion de fondo
 
+% BD CERCOSPORA
+% ------------------
+canalLMin = 37.882; canalLMax = 93.100; canalAMin = -4.215; canalAMax = 7.603; canalBMin = -6.477; canalBMax = 7.127; %parametros de umbralizacion de fondo
 
 %% Remover archivos antiguos, borrar archivos antiguos
 fprintf('LIMPIANDO IMAGENES ANTIGUAS \n');
-removeFiles(strcat(pathAplicacion,'ROICalyxC/','*.jpg'));
-removeFiles(strcat(pathAplicacion,'ROICalyxBin/','*.jpg'));
+removeFiles(strcat(pathAplicacion,'ROISpotC/','*.jpg'));
+removeFiles(strcat(pathAplicacion,'ROISpotBin/','*.jpg'));
 removeFiles(strcat(pathAplicacion,'MROI/','*.jpg'));
 removeFiles(strcat(pathAplicacion,'MRM/','*.jpg'));
-removeFiles(strcat(pathAplicacion,'MCalyxColor/','*.jpg'));
-removeFiles(strcat(pathAplicacion,'MCalyxBin/','*.jpg'));
+removeFiles(strcat(pathAplicacion,'MSpotColor/','*.jpg'));
+removeFiles(strcat(pathAplicacion,'MSpotBin/','*.jpg'));
 removeFiles(strcat(pathAplicacion,'ISLeaves/','*.jpg'));
 removeFiles(strcat(pathAplicacion,'IROI/','*.jpg'));
 removeFiles(strcat(pathAplicacion,'IRM/','*.jpg'));
 removeFiles(strcat(pathAplicacion,'IBR/','*.jpg'));
-removeFiles(strcat(pathAplicacion,'cDefectos/','*.jpg'));
-removeFiles(strcat(pathAplicacion,'cCalyx/','*.jpg'));
+removeFiles(strcat(pathAplicacion,'cSpot/','*.jpg'));
+
+
 
 %% --------------------------------------------------------------------
 listado=dir(strcat(pathEntradaMarca,'*.jpg')); %recorre el listado de las imagenes marcadas
@@ -64,7 +70,7 @@ for n=1:size(listado)
     ProcessMarks(pathEntradaImagenes, pathEntradaMarca, pathAplicacion, nombreImagenP, areaObjetosRemoverBR, canalLMin, canalLMax, canalAMin, canalAMax, canalBMin, canalBMax )    
     %GENERA imagenes marcadas
     ExtractMarkedRegions(pathEntradaImagenes, pathAplicacion, nombreImagenP)
-    if n==1
+    if n==10
         break;
     end;
 end %

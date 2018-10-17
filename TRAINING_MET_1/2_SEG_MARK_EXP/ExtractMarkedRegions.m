@@ -18,8 +18,8 @@ pathAplicacion6=strcat(pathAplicacion,'cDefectos/');
 
 
 %% CONFIGURACIONES DEFECTOS MASCARA Y COLOR
-pathCalyxColor=strcat(pathAplicacion,'cCalyx/'); %almacenado de enfermedad en color
-pathCalyxBinario=strcat(pathAplicacion,'MCalyxBin/'); %almacenado de enfermedad marcada en binario
+pathCalyxColor=strcat(pathAplicacion,'cSpot/'); %almacenado de enfermedad en color
+pathCalyxBinario=strcat(pathAplicacion,'MSpotBin/'); %almacenado de enfermedad marcada en binario
 
 %pathDefColor=strcat(pathAplicacion,'cDefColor/'); %almacenado de defectos color
 %pathDefBinario=strcat(pathAplicacion,'MDefBin/'); %almacenado de defectos binario
