@@ -27,7 +27,11 @@ maskedRGBImage(repmat(~BW,[1 1 3])) = 0;
 nivel=graythresh(maskedRGBImage(:,:,3)); %umbral colocado en base a la experiencia
 IB2=im2bw(maskedRGBImage(:,:,3),nivel);
 
+%% Elimina los elementos cuya area es igual al parametro, deja los elementos grandes
+IB3=bwareaopen(IB2,10);
+
+
 %% Almacenar en archivos las imagenes de clusteres
 imwrite(maskedRGBImage,nombreImagenDEFROI,'jpg');
-imwrite(IB2,nombreImagenSalida,'jpg');
+imwrite(IB3,nombreImagenSalida,'jpg');
 end
