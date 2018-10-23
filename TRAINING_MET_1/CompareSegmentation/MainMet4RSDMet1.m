@@ -17,14 +17,14 @@ pathPrincipal=strcat(HOME,'SoyResults2/'); %
 pathEntradaImagenes=strcat(HOME,'SoyResults2/');
 pathEntradaMarca=strcat(HOME,'SoyResults2/compare/MARKED/'); %% obtiene la lista de imágenes a comparar
 
-pathAplicacionCOMPARAR=strcat(pathPrincipal,'compare/CompareSDMet1/');
-pathAplicacionONLINE=strcat(pathPrincipal,'compare/SDMet1/');
-pathAplicacionMARCAS=strcat(pathPrincipal,'compare/MARKED_BY_EXPERT/');
+pathAplicacionCOMPARAR=strcat(pathPrincipal,'compare/CompareSDMet1/'); %directorio donde se van a comparar los resultados
+pathAplicacionONLINE=strcat(pathPrincipal,'compare/SDMet1/'); %directorio donde se colocan imagenes a evaluar
+pathAplicacionMARCAS=strcat(pathPrincipal,'compare/MARKED_BY_EXPERT/'); %directorio donde se colocan maraciones del experto en binario
 
 nombreImagenP='nombreImagenP'; %imagen original
 
-pathDefBinario=strcat(pathAplicacionMARCAS,'BINARY_MARKED/'); %almacenado de defectos binario POR MARCAS
-pathCalyxBinario=strcat(pathAplicacionMARCAS,'MCalyxBin/'); %almacenado de calyx en binario POR MARCAS
+%pathDefBinario=strcat(pathAplicacionMARCAS,'BINARY_MARKED/'); %almacenado de defectos binario POR MARCAS
+pathCalyxBinario=strcat(pathAplicacionMARCAS,'MSpotBin/'); %almacenado de calyx en binario POR MARCAS
 pathExpertoBin=strcat(pathAplicacionCOMPARAR,'ExpertoBin/'); % resultados juntados calyx y defectos EXPERTO
 %% software
 pathDefectosBin=strcat(pathAplicacionONLINE,'spots/'); % siluetas defectos por SOFTWARE ONLINE
@@ -63,7 +63,7 @@ for n=1:size(listado)
     %for ROI=1:1
     ROI=1
     % creadas con el proceso de separacion de roi 
-        nombreImagenDefBin=strcat(pathDefBinario,nombreImagenP,'_','DEFB', int2str(ROI),'.jpg'); %mascara binaria defectos
+        %nombreImagenDefBin=strcat(pathDefBinario,nombreImagenP,'_','DEFB', int2str(ROI),'.jpg'); %mascara binaria defectos
         nombreImagenCalyxBin=strcat(pathCalyxBinario,nombreImagenP,'_','CALB', int2str(ROI),'.jpg'); %mascara binaria calyx        
         % juntos, son los resultados que dio el EXPERTO defectos y calyx
         nombreMascaraExperto=strcat(pathExpertoBin,nombreImagenP,'_','E', int2str(ROI),'.jpg');
