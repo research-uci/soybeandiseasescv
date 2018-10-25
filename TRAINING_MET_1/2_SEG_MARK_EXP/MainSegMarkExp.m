@@ -20,13 +20,13 @@ clc; clear all; close all;
  
  %% Definicion de estructura de directorios 
 HOME=strcat(pwd,'/');
-pathPrincipal=strcat(HOME,'SoyResults2/TrainingMet1/SegMarkExp/');
+pathPrincipal=strcat(HOME,'SoyResults3/TrainingMet1/SegMarkExp/');
 pathConfiguracion=strcat(pathPrincipal,'conf/'); %se guardan configuraciones
 pathAplicacion=strcat(pathPrincipal,'tmpToLearn/'); %se utiliza para situar las imagenes de calibracion
 pathResultados=strcat(pathPrincipal,'output/');%se guardan los resultados
 
 
-pathDB=strcat(HOME,'SoyResults2/'); %entrada con imagenes marcadas por experto
+pathDB=strcat(HOME,'SoyResults3/'); %entrada con imagenes marcadas por experto
 pathEntradaImagenesMarcas=strcat(pathDB,'MARKED/'); %entrada con imagenes marcadas por experto
 pathEntradaImagenes=strcat(pathDB,'SOURCE/');
 pathEntradaMarca=strcat(pathDB,'inputTraining/'); %deben almacenarse imágenes marcadas para entrenamiento.
@@ -70,9 +70,9 @@ for n=1:size(listado)
     ProcessMarks(pathEntradaImagenes, pathEntradaMarca, pathAplicacion, nombreImagenP, areaObjetosRemoverBR, canalLMin, canalLMax, canalAMin, canalAMax, canalBMin, canalBMax )    
     %GENERA imagenes marcadas
     ExtractMarkedRegions(pathEntradaImagenes, pathAplicacion, nombreImagenP)
-    if n==10
-        break;
-    end;
+    %if n==10
+    %    break;
+    %end;
 end %
 
 fprintf('SE HAN SEPARADO LAS REGIONES MARCADAS POR EL EXPERTO \n');

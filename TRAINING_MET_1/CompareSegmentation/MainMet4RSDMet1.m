@@ -13,9 +13,9 @@ clc; clear all; close all;
  
  %% Definicion de estructura de directorios 
 HOME=strcat(pwd,'/');
-pathPrincipal=strcat(HOME,'SoyResults2/'); %
-pathEntradaImagenes=strcat(HOME,'SoyResults2/');
-pathEntradaMarca=strcat(HOME,'SoyResults2/compare/MARKED/'); %% obtiene la lista de imágenes a comparar
+pathPrincipal=strcat(HOME,'SoyResults3/'); %
+pathEntradaMarca=strcat(HOME,'SoyResults3/compare/MARKED/'); %% obtiene la lista de imágenes a comparar
+%pathEntradaMarca=strcat(HOME,'SoyResults3/compare/SDMet1/spots/');
 
 pathAplicacionCOMPARAR=strcat(pathPrincipal,'compare/CompareSDMet1/'); %directorio donde se van a comparar los resultados
 pathAplicacionONLINE=strcat(pathPrincipal,'compare/SDMet1/'); %directorio donde se colocan imagenes a evaluar
@@ -23,9 +23,8 @@ pathAplicacionMARCAS=strcat(pathPrincipal,'compare/MARKED_BY_EXPERT/'); %directo
 
 nombreImagenP='nombreImagenP'; %imagen original
 
-%pathDefBinario=strcat(pathAplicacionMARCAS,'BINARY_MARKED/'); %almacenado de defectos binario POR MARCAS
 pathCalyxBinario=strcat(pathAplicacionMARCAS,'MSpotBin/'); %almacenado de calyx en binario POR MARCAS
-pathExpertoBin=strcat(pathAplicacionCOMPARAR,'ExpertoBin/'); % resultados juntados calyx y defectos EXPERTO
+pathExpertoBin=strcat(pathAplicacionCOMPARAR,'ExpertoBin/'); % resultados defectos EXPERTO
 %% software
 pathDefectosBin=strcat(pathAplicacionONLINE,'spots/'); % siluetas defectos por SOFTWARE ONLINE
 
@@ -61,7 +60,7 @@ for n=1:size(listado)
     % se asume que siempre existen 4 imagenes
 
     %for ROI=1:1
-    ROI=1
+    ROI=1;
     % creadas con el proceso de separacion de roi 
         %nombreImagenDefBin=strcat(pathDefBinario,nombreImagenP,'_','DEFB', int2str(ROI),'.jpg'); %mascara binaria defectos
         nombreImagenCalyxBin=strcat(pathCalyxBinario,nombreImagenP,'_','CALB', int2str(ROI),'.jpg'); %mascara binaria calyx        
@@ -160,7 +159,7 @@ for n=1:size(listado)
     %% CALCULAR PROMEDIO
     %% GUARDAR EN ARCHIVO
     disp(n);
-    if n==1
+    if n==10
         break;
     end
 end %

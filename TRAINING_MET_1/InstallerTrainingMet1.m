@@ -11,7 +11,7 @@
 clc; clear all; close all;
 
 HOME=strcat(pwd,'/');
-pathMain=strcat(HOME,'SoyResults2/');
+pathMain=strcat(HOME,'SoyResults3/');
 pathTrainingMet=strcat(pathMain,'TrainingMet1/')
 
 %---------------------
