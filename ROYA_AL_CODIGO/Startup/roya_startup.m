@@ -31,3 +31,5 @@ pathRust       = getRust(strDir,pathCrop);
 
 fprintf('\n Empiezan extraccion de manchas con Kmeans\n');
 run('manchasKmeans.m');
+fprintf('\n Empiezan separacion de manchas en clases y generacion de csv\n');
+run('separarClases.m');
