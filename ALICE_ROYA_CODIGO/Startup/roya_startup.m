@@ -6,7 +6,7 @@
 % (home/user/roya2018/Startup.m)
 % -------------------------------------------------------------------------
 % Alice Nathalia Colmán Barboza
-% 26 de Octubre del 2018
+% 7 de Noviembre del 2018
 % -------------------------------------------------------------------------
 %% Inicialización
 clear; 
@@ -33,11 +33,14 @@ fprintf('\n Empiezan extraccion de manchas con Kmeans\n');
 run('manchasKmeans.m');
 fprintf('\n Empiezan separacion de manchas en clases y generacion de csv\n');
 run('separarClases.m');
-fprintf('\n Empiezan division en carpetas (aun no 70 y 30) \n');
-run('pruebaTrainingTest.m');
+fprintf('\n Empiezan division en carpetas \n');
+run('separarImagenes.m');
 fprintf('\n Empiezan procesos de segmentacion en hojas marcadas en magenta \n');
 run('main.m');
 fprintf('\n Empiezan extracciones en hojas marcadas en magenta \n');
 run('mainMagenta.m');
-fprintf('\n Creacion de csv de precision, especificidad, sensibilidad, exactitud  \n');
-run('main.m');
+fprintf('\n Empiezan copia de imagenes para csv \n');
+run('mainComparar.m');
+ fprintf('\n Creacion de csv de precision, especificidad, sensibilidad, exactitud  \n');
+run('LABbin.m');
+run('mainFP.m');

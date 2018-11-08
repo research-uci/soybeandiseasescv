@@ -37,12 +37,10 @@ counter   = length(segPNG);
         %% elimina el .png duplicado
         newStr = erase(name,".png");
 
-        %% reemplaza el S por bin
-        newName = strrep(newStr,'S','R');
 
         % parametros: (imagen a guardar, [direccion de carpeta en
         % donde guarda, nombre de la imagen original, formato a guardar])
-        imwrite(binImage,[binFolder,newName,'.png']);
+        imwrite(binImage,[binFolder,newStr,'.png']);
 
     end
         

@@ -1,9 +1,10 @@
-function [ ] = coincidencia(nombreMascaraExp, nombreMascaraSoft, nombreMascaraFinal)
+function [ ] = diferencia(nombreMascaraExp, nombreMascaraSoft, nombreMascaraFinal)
 % ########################################################################
 % Project AUTOMATIC CLASSIFICATION OF ORANGES BY SIZE AND DEFECTS USING 
 % COMPUTER VISION TECHNIQUES 2018
 % juancarlosmiranda81@gmail.com
 % ########################################################################
+
 IExp=imread(nombreMascaraExp);
 ISoft=imread(nombreMascaraSoft);
 
@@ -14,6 +15,7 @@ IBExp=im2bw(IExp,nivel);
 %% 
 nivel=graythresh(ISoft);
 IBSoft=im2bw(ISoft,nivel);
+
 ... aqui salta el error porque las dimensiones no son las mismas..
 ... se hallan las dimensiones de la imagen binaria de experto
  [y1,x1] = size(IBExp);
@@ -21,8 +23,8 @@ IBSoft=im2bw(ISoft,nivel);
     ... con respecto a la imagen experto
       ... llamandola IBSoft2
  IBSoft2 = imresize(IBSoft,[y1 x1]); 
-................................................................
-final=bitand(IBExp,IBSoft2);
+
+final=bitxor(IBExp,IBSoft2);
 imwrite(final,nombreMascaraFinal,'jpg');
 
 end %funcion

@@ -47,11 +47,11 @@ counter   = length(renameJPG);
         newStr = erase(name,".jpg");
 
 %         % agrega el S00n
-         newName = strrep(newStr,'crop','R');
+%          newName = strrep(newStr,'crop','R');
 
         % parametros: (imagen a guardar, [direccion de carpeta en
         % donde guarda, nombre de la imagen original, formato a guardar])
-        imwrite(ima,[segFolder,newName,'.png']);
+        imwrite(ima,[segFolder,newStr,'.png']);
 
     end
 

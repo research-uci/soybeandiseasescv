@@ -1,10 +1,9 @@
-function [ ] = diferencia(nombreMascaraExp, nombreMascaraSoft, nombreMascaraFinal)
+function [ ] = coincidencia(nombreMascaraExp, nombreMascaraSoft, nombreMascaraFinal)
 % ########################################################################
 % Project AUTOMATIC CLASSIFICATION OF ORANGES BY SIZE AND DEFECTS USING 
 % COMPUTER VISION TECHNIQUES 2018
 % juancarlosmiranda81@gmail.com
 % ########################################################################
-
 IExp=imread(nombreMascaraExp);
 ISoft=imread(nombreMascaraSoft);
 
@@ -23,8 +22,8 @@ IBSoft=im2bw(ISoft,nivel);
       ... llamandola IBSoft2
  IBSoft2 = imresize(IBSoft,[y1 x1]); 
 ................................................................
+final=bitand(IBExp,IBSoft2);
 
-final=bitxor(IBExp,IBSoft2);
 imwrite(final,nombreMascaraFinal,'jpg');
 
 end %funcion

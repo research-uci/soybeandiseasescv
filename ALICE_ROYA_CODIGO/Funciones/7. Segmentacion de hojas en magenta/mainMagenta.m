@@ -22,4 +22,4 @@ mkdir         (folder);
 % pathBin       = binarizar(folder,pathSeg);
 % pathCrop      = cropImagen(folder,pathSeg,pathBin);
 pathManchas   = manchas(folder,pathHaz);
-% rename(folder,pathManchas);
+

@@ -44,9 +44,9 @@ for ii = 1 : nFiles
     
     %% elimina el .png duplicado
     newStr = erase(nombreImagen,".png");
-    newName = strrep(newStr,'crop','R');
+%     newName = strrep(newStr,'crop','R');
     
-    imwrite(ima,[Folder,newName,'.png']);
+    imwrite(ima,[Folder,newStr,'.png']);
     
 end
 files2 = dir(fullfile(Folder,'*.png'));
@@ -63,10 +63,10 @@ for ii = 1 : nFiles
     newStr2 = erase(nombreImagen,".png");
     %         imshow(binImage)
     %% reemplaza el S por bin
-    newName = strrep(newStr2,'crop','R');
+%     newName = strrep(newStr2,'crop','R');
     
     %imwrite(binImage,[Folder2,newStr2,strcat('.png','_CALB1.jpg')]);
-    imwrite(binImage,[Folder2,newName,'.png']);
+    imwrite(binImage,[Folder2,newStr2,'.png']);
     
     
 end

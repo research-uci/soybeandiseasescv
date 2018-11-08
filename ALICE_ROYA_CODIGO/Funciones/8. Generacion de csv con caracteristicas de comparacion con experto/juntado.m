@@ -4,7 +4,6 @@ function [ ] = juntado(nombreMascaraExp, nombreMascaraSoft, nombreMascaraFinal)
 % COMPUTER VISION TECHNIQUES 2018
 % juancarlosmiranda81@gmail.com
 % ########################################################################
-
 IExp=imread(nombreMascaraExp);
 ISoft=imread(nombreMascaraSoft);
 

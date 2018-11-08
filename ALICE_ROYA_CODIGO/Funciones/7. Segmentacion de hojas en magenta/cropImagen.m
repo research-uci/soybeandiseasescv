@@ -52,14 +52,14 @@ cropFolder = strcat(strDir,pathCrop);
           newStr = erase(nombreImagen,".png");
 
           % reemplaza el bin por hoja
-          newName = erase(newStr,"bin");
-          newName2 = strrep(newName,'OY','SOY');
-          newName3 = strrep(newName2,'UT','RUST');
+%           newName = erase(newStr,"bin");
+%           newName2 = strrep(newName,'ROY','SOY');
+%           newName3 = strrep(newName2,'RURT','RUST');
             
 
           % parametros: (imagen a guardar, [direccion de carpeta en
           % donde guarda, nombre de la imagen original, formato a guardar])
-          imwrite(img_crop,[cropFolder,newName3,'.png']);
+          imwrite(img_crop,[cropFolder,newStr,'.png']);
      end
  
  
