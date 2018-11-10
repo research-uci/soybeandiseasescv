@@ -13,7 +13,7 @@ mkdir         (strDir);
 %% Definición de paths de base de datos de imagenes escogidas originales
 %pathHaz = strcat(home,'Escritorio/MARKED/'); % path de imagenes completas
 %marcadas (100)
-pathHaz = strcat(home,'Escritorio/clasificanding/pruebasMARKED/'); % path de imagenes completas marcadas (11)
+pathHaz = strcat(home,'Escritorio/clasificading/pruebasMARKED/'); % path de imagenes completas marcadas (11)
 %% donde se guardaran los resultados
 folder        = strcat(home,'Escritorio/Resultado_de_Magenta/');
 mkdir         (folder);
