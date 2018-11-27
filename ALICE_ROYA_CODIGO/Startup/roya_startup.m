@@ -1,13 +1,17 @@
-%% Main Script roya_startup
+
+% ########################################################################
+% Project AUTOMATIC DETECTION OF SOYBEAN DISEASES USING 
+% COMPUTER VISION TECHNIQUES 2018
+% alycolbar@gmail.com, juancarlosmiranda81@gmail.com
+% ########################################################################
+% Main Script roya_startup
 % -------------------------------------------------------------------------
 % Este script inicializa el matlab workspace, define paths y
 % variables globales para roya2018
 % Llama este script desde su ubicación local
 % (home/user/roya2018/Startup.m)
 % -------------------------------------------------------------------------
-% Alice Nathalia Colmán Barboza
-% 7 de Noviembre del 2018
-% -------------------------------------------------------------------------
+
 %% Inicialización
 clear; 
 close all; 
